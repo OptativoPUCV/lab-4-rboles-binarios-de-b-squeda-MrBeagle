@@ -3,6 +3,8 @@
 #include <string.h>
 #include "treemap.h"
 
+#define _CRT_SECURE_NO_WARNINGS
+
 typedef struct TreeNode TreeNode;
 
 
