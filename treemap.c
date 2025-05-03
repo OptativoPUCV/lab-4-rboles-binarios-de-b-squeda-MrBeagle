@@ -4,6 +4,7 @@
 #include "treemap.h"
 
 #define _CRT_SECURE_NO_WARNINGS
+#pragma GCC diagnostic ignored "-Wattributes"
 
 typedef struct TreeNode TreeNode;
 
