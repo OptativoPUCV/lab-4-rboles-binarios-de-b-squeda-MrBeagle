@@ -3,6 +3,8 @@
 #include <string.h>
 #include "treemap.h"
 
+// Le pregunte a chatgp como solucionar el mismo problema del lab anterior 
+// y me sugirio agregar las siguientes lineas de codigo para evitar el warning
 #define _CRT_SECURE_NO_WARNINGS
 #pragma GCC diagnostic ignored "-Wattributes"
 
@@ -53,6 +55,7 @@ TreeMap * createTreeMap(int (*lower_than) (void* key1, void* key2)) {
 
 void insertTreeMap(TreeMap * tree, void* key, void * value) {
 
+
 }
 
 TreeNode * minimum(TreeNode * x){
@@ -78,6 +81,19 @@ void eraseTreeMap(TreeMap * tree, void* key){
 
 
 Pair * searchTreeMap(TreeMap * tree, void* key) {
+    if (tree == NULL || tree->root == NULL) return NULL;
+    TreeNode * current = tree->root;
+    while(current != NULL){
+        if (tree->lower_than(key, current->pair->key) == 0 && 
+            tree->lower_than(current->pair->key, key) == 0) {
+            tree->current = current;
+            return current->pair;
+        } else if (tree->lower_than(key, current->pair->key)) {
+            current = current->left;
+        } else {
+            current = current->right;
+        }
+    }
     return NULL;
 }
 
