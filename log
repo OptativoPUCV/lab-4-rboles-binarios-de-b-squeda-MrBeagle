@@ -34,3 +34,17 @@ Sat, May  3, 2025  8:01:30 PM:
  tests:  13|5
 total_score: 25/70
 a1dbcde
+Sat, May  3, 2025  8:34:42 PM: 
+ treemap.c | 44 ++++++++++++++++++++++++++++++++++++++++----
+ 1 file changed, 40 insertions(+), 4 deletions(-)
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function 'removeNode':
+treemap.c:94:30: error: 'return' with a value, in function returning void [-Werror=return-type]
+   94 |     if (node == NULL) return NULL;
+      |                              ^~~~
+treemap.c:93:6: note: declared here
+   93 | void removeNode(TreeMap * tree, TreeNode* node) {
+      |      ^~~~~~~~~~
+cc1.exe: all warnings being treated as errors
+43b2909
